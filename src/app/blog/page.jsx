@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Blog() {
-  return <div>Blog</div>;
+  return <section>Blog</section>;
 }
 
 export default Blog;
