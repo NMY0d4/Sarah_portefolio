@@ -23,3 +23,7 @@ body {
   color: var(--lightness);
   background-color: var(--darkness);
 }
+
+.big-container {
+  @apply container max-w-[1366px] min-h-screen mx-auto px-[60px] flex flex-col justify-between;
+}
