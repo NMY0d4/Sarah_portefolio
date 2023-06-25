@@ -31,3 +31,16 @@ h1 {
 .big-container {
   @apply container max-w-[1366px] min-h-screen mx-auto px-[60px] flex flex-col justify-between;
 }
+
+.image-move {
+  animation: move 3s infinite ease alternate;
+}
+
+@keyframes move {
+  from {
+    transform: translateY(-15px);
+  }
+  to {
+    transform: translateY(0px) scale(1.03);
+  }
+}

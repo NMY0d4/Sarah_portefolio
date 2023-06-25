@@ -22,7 +22,7 @@ export default function Home() {
         <Image
           src={HeroImg}
           alt='Sarah portfolio Hero image'
-          className='w-full object-cover'
+          className='w-full object-cover image-move'
         />
       </div>
     </div>

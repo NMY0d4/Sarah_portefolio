@@ -11,7 +11,7 @@ function About() {
         <Image
           src='/assets/img_about.jpg'
           fill={true}
-          alt=''
+          alt='Sarah portfolio A propos de mois'
           className='object-cover filter grayscale'
         />
         <div className='absolute bottom-5 left-5 bg-primaryDark p-2 rounded text-tertiary'>
