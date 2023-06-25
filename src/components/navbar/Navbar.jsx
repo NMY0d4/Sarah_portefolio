@@ -19,6 +19,11 @@ const links = [
     url: '/blog',
   },
   {
+    id: 4,
+    title: 'About',
+    url: '/about',
+  },
+  {
     id: 5,
     title: 'Contact',
     url: '/contact',
