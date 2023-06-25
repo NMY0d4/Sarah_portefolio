@@ -8,10 +8,10 @@ export default function Home() {
   return (
     <div className='flex items-start gap-24'>
       <div className={item}>
-        <h1 className='bg-gradient-to-t from-tertiary to-secondaryLight text-transparent bg-clip-text'>
-          Une meilleure conception de vos produits numériques
+        <h1 className='bg-gradient-to-t from-tertiary to-primaryDark text-transparent bg-clip-text leading-snug'>
+          Laissez votre imagination prendre vie
         </h1>
-        <p className=''>
+        <p className='font-lg font-light'>
           Découvrez l&apos;univers visuel captivant d&apos;une graphiste
           passionnée : plongez dans un monde d&apos;expressions artistiques où
           chaque pixel raconte une histoire.
