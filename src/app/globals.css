@@ -24,6 +24,10 @@ body {
   background-color: var(--darkness);
 }
 
+h1 {
+  @apply text-5xl font-bold;
+}
+
 .big-container {
   @apply container max-w-[1366px] min-h-screen mx-auto px-[60px] flex flex-col justify-between;
 }
