@@ -12,7 +12,7 @@ function Portfolio() {
       <h1 className='my-5 mx-0 text-5xl'>Choisissez une galerie.</h1>
       <div className='flex gap-12'>
         <Link
-          href='/portefolio/illustrations'
+          href='portefolio/illustrations'
           className={itemStyle}
           style={{ backgroundImage: `url(/assets/illustration.jpg)` }}
         >
@@ -20,7 +20,7 @@ function Portfolio() {
         </Link>
 
         <Link
-          href='/portefolio/videos'
+          href='portefolio/videos'
           className={itemStyle}
           style={{ backgroundImage: `url(/assets/movie.jpg)` }}
         >
@@ -28,7 +28,7 @@ function Portfolio() {
         </Link>
 
         <Link
-          href='/portefolio/animations'
+          href='portefolio/animations'
           className={itemStyle}
           style={{ backgroundImage: `url(/assets/animation.jpg)` }}
         >
