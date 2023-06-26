@@ -8,6 +8,21 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      },
+      fontWeight: {
+        poppins: {
+          thin: '200',
+          light: '300',
+          normal: '400',
+          medium: '500',
+          semibold: '600',
+          bold: '700',
+          extrabold: '800',
+          black: '900',
+        },
+      },
       colors: {
         primaryDark: 'var(--primaryDark)',
         primary: 'var(--primary)',

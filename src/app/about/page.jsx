@@ -2,9 +2,9 @@ import Button from '@/components/ui/button/Button';
 import Image from 'next/image';
 
 function About() {
-  // STYLE ------------
+  // STRING STYLE -------------
   const textItemStyle = 'flex-1 mt-12 flex flex-col gap-7';
-  // --------------------
+  // --------------------------
   return (
     <div className=''>
       <div className='relative w-full h-[300px]'>

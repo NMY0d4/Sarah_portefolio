@@ -3,11 +3,14 @@ import Image from 'next/image';
 import React from 'react';
 
 function Contact() {
+  // STRING STYLE -------------
   const inputStyle =
     'w-full p-2 mb-4 border-[2px] border-primaryDark bg-transparent rounded outline-none text-tertiary text-lg font-bold';
+  // -------------------
+
   return (
     <div className=''>
-      <h1 className='text-4xl mb-14 text-center text-tertiary'>
+      <h1 className='font-poppins font-bold text-5xl mb-14 text-center text-tertiary'>
         Entrons en contact
       </h1>
       <div className='flex items-center gap-24'>

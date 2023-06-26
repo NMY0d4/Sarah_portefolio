@@ -4,6 +4,10 @@ import { Inter } from 'next/font/google';
 import Footer from '@/components/footer/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
+// const poppins = Poppins({
+//   weight: ['200', '400', '600', '800'],
+//   subsets: ['latin'],
+// });
 
 export const metadata = {
   title: 'Create Next App',

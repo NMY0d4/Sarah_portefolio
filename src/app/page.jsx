@@ -4,11 +4,13 @@ import HeroImg from '/public/assets/sarah-2.png';
 import Button from '@/components/ui/button/Button';
 
 export default function Home() {
+  // STRING STYLE -------------
   const item = 'flex-1 flex flex-col gap-12';
+  // ---------------------
   return (
     <div className='flex items-start gap-24'>
       <div className={item}>
-        <h1 className='font-extrabold bg-gradient-to-t from-tertiary to-primaryDark text-transparent bg-clip-text leading-[4.2rem]'>
+        <h1 className='font-poppins font-extrabold bg-gradient-to-t from-tertiary to-primaryDark text-transparent bg-clip-text leading-[4.2rem]'>
           Laissez votre imagination prendre vie
         </h1>
         <p className='font-lg font-semibold'>
