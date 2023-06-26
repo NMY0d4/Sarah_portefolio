@@ -1,4 +1,5 @@
 import Button from '@/components/ui/button/Button';
+import SecBtn from '@/components/ui/secBtn/SecBtn';
 import Image from 'next/image';
 import React from 'react';
 
@@ -31,7 +32,7 @@ function Contact() {
             cols='30'
             rows='10'
           ></textarea>
-          <Button url='#' text='Envoyer' />
+          <SecBtn url='#' text='Envoyer' />
         </form>
       </div>
     </div>

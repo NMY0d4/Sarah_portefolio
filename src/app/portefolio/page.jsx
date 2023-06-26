@@ -9,7 +9,7 @@ function Portfolio() {
   // -------------------
   return (
     <div className=''>
-      <h1 className='my-5 mx-0 text-5xl'>Choisissez une galerie.</h1>
+      <h1 className='my-5 mx-0 text-4xl'>Choisissez une galerie.</h1>
       <div className='flex gap-12'>
         <Link
           href='portefolio/illustrations'
