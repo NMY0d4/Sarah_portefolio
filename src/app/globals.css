@@ -26,6 +26,10 @@ h1 {
   @apply text-[60px] font-bold;
 }
 
+.theme {
+  transition: 0.8s all ease;
+}
+
 .light {
   background-color: var(--lightness);
   color: var(--greyDark);
