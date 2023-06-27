@@ -2,14 +2,28 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
-function Blog() {
+async function getData() {
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
+    cache: 'no-store',
+  });
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error('Failed to fetch data');
+  }
+
+  return res.json();
+}
+
+const Blog = async () => {
+  const data = await getData();
   return (
-    <div className='flex flex-col gap-5'>
-      <Link
-        href='/blog/testId'
-        className='flex items-center gap-[50px] mb-[50px]'
-      >
-        <div className=''>
+    <div className=''>
+      {data.map((item) => (
+        <Link
+          key={item.id}
+          href='/blog/testId'
+          className='flex items-center gap-[50px] mb-[50px]'
+        >
           <Image
             src='https://images.pexels.com/photos/3601081/pexels-photo-3601081.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
             alt=''
@@ -17,19 +31,15 @@ function Blog() {
             height={250}
             className='object-cover'
           />
-        </div>
-        <div className=''>
-          <h2 className='text-[30px] mb-3'>Test</h2>
-          <p className='text-[18px] '>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
-            quos labore, voluptates maxime ipsa ab vero repellat illo? Non
-            debitis recusandae, odit cumque quidem est sint ad fugit soluta?
-            Accusantium!
-          </p>
-        </div>
-      </Link>
+
+          <div className=''>
+            <h2 className='text-[30px] mb-3'>{item.title}</h2>
+            <p className='text-[18px]'>{item.description}</p>
+          </div>
+        </Link>
+      ))}
     </div>
   );
-}
+};
 
 export default Blog;

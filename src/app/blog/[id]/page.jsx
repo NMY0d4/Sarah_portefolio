@@ -1,14 +1,26 @@
 import Image from 'next/image';
 import React from 'react';
+import { notFound } from 'next/navigation';
 
-function BlogPost() {
+async function getData(id) {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+    cache: 'no-store',
+  });
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    return notFound();
+  }
+
+  return res.json();
+}
+
+const BlogPost = async ({ params }) => {
+  const data = await getData(params.id);
   return (
     <div className=''>
       <div className='flex'>
         <div className='flex-1 flex flex-col justify-between'>
-          <h1 className='text-[40px]'>
-            Un titre pour tester juste le style avant les data
-          </h1>
+          <h1 className='text-[40px]'>{data.title}</h1>
           <p className='text-[18px] font-light'>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
             voluptas impedit laborum exercitationem, molestias officia alias sed
@@ -51,6 +63,6 @@ function BlogPost() {
       </div>
     </div>
   );
-}
+};
 
 export default BlogPost;

@@ -1,8 +1,8 @@
-import Navbar from '@/components/navbar/Navbar';
-import './globals.css';
 import { Inter } from 'next/font/google';
-import Footer from '@/components/footer/Footer';
+import './globals.css';
 import { ThemeProvider } from '../../context/ThemeContext';
+import Navbar from '@/components/navbar/Navbar';
+import Footer from '@/components/footer/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 // const poppins = Poppins({
@@ -18,7 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      <body className={inter.className} suppressHydrationWarning={true}>
         <ThemeProvider>
           <div className='big-container'>
             <Navbar />
