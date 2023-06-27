@@ -20,7 +20,7 @@ function Blog() {
         </div>
         <div className=''>
           <h2 className='text-[30px] mb-3'>Test</h2>
-          <p className='text-[18px] text-tertiary'>
+          <p className='text-[18px] '>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
             quos labore, voluptates maxime ipsa ab vero repellat illo? Non
             debitis recusandae, odit cumque quidem est sint ad fugit soluta?

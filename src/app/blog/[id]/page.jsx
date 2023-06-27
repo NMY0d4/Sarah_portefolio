@@ -35,7 +35,7 @@ function BlogPost() {
           />
         </div>
       </div>
-      <div className='mt-[50px] text-[20px] font-light text-tertiary text-justify'>
+      <div className='mt-[50px] text-[20px] font-light text-justify'>
         <p className=''>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem
           facere sit eligendi explicabo eaque, et eum aut! Deserunt autem fugit
