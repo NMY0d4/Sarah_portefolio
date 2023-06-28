@@ -44,6 +44,10 @@ h1 {
   @apply container max-w-[1366px] min-h-screen mx-auto px-[60px] flex flex-col justify-between;
 }
 
+.inputStyle {
+  @apply w-full p-2 mb-4 border-[2px] border-primaryDark bg-transparent rounded outline-none text-inherit text-lg font-bold;
+}
+
 .image-move {
   animation: move 3s infinite ease alternate;
 }

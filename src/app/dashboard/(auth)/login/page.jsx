@@ -5,7 +5,7 @@ import React from 'react';
 
 const Login = () => {
   return (
-    <div>
+    <div className='text-center'>
       <SecBtn
         url='#'
         text='Login with Google'
