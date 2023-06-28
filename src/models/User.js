@@ -1,24 +1,18 @@
 import mongoose, { Schema } from 'mongoose';
 
-const postSchema = new Schema(
+const userSchema = new Schema(
   {
-    title: {
+    name: {
       type: String,
+      unique: true,
       require: true,
     },
-    desc: {
+    email: {
       type: String,
+      unique: true,
       require: true,
     },
-    img: {
-      type: String,
-      require: true,
-    },
-    content: {
-      type: String,
-      require: true,
-    },
-    username: {
+    password: {
       type: String,
       require: true,
     },
@@ -28,4 +22,4 @@ const postSchema = new Schema(
   }
 );
 
-export default mongoose.model('Post', postSchema);
+export default mongoose.model('User', userSchema);
