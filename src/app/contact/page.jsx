@@ -1,7 +1,11 @@
-import Button from '@/components/ui/button/Button';
 import SecBtn from '@/components/ui/secBtn/SecBtn';
 import Image from 'next/image';
 import React from 'react';
+
+export const metadata = {
+  title: 'Sarah 👉Contactez-moi 🤞',
+  description: 'portefolio graphiste, designer',
+};
 
 function Contact() {
   // STRING STYLE -------------
