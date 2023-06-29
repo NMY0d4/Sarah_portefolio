@@ -3,6 +3,10 @@ import connect from '@/utils/db';
 import { NextResponse } from 'next/server';
 
 export const GET = async (req) => {
+  const url = new URL(req.url);
+
+  const username = url.searchParams.get('username');
+
   try {
     await connect();
     const posts = await Post.find();
