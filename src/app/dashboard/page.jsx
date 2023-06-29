@@ -28,20 +28,22 @@ function Dashboard() {
 
   const session = useSession();
   console.log(session);
-
   const router = useRouter();
+
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, error, isLoading } = useSWR(
     'https://jsonplaceholder.typicode.com/posts',
     fetcher
   );
 
+  useEffect(() => {
+    if (session.status === 'unauthenticated') {
+      router?.push('/dashboard/login');
+    }
+  }, [session.status, router]);
+
   if (session.status === 'loading') {
     return <p>Loading...</p>;
-  }
-
-  if (session.status === 'unauthenticated') {
-    router?.push('/dashboard/login');
   }
 
   if (session.status === 'authenticated') {
