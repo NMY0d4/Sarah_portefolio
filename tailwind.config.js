@@ -36,6 +36,7 @@ module.exports = {
         greyDark: 'var(--greyDark)',
         grey: 'var(--grey)',
         greyLight: 'var(--greyLight)',
+        danger: 'var(--danger)',
       },
     },
   },

@@ -9,7 +9,7 @@ export const GET = async (req) => {
 
   try {
     await connect();
-    const posts = await Post.find();
+    const posts = await Post.find(username && { username });
     return new NextResponse(JSON.stringify(posts), { status: 200 });
   } catch (error) {
     return new NextResponse('Database Error!', { status: 500 });
@@ -19,7 +19,7 @@ export const GET = async (req) => {
 export const POST = async (req) => {
   const body = await req.json();
 
-  const newPost = new Post(body);
+  const newPost = await new Post(body);
 
   try {
     await connect();
