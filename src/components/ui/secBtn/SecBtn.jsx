@@ -2,17 +2,21 @@ import React from 'react';
 import styles from './SecBtn.module.css';
 import Link from 'next/link';
 
-const SecBtn = ({ text, url, ...rest }) => {
+const SecBtn = ({ text, url, classPerso = '', ...rest }) => {
   if (url) {
     return (
-      <Link className={styles.secBtn} href={url} {...rest}>
+      <Link {...rest} className={`${styles.secBtn} ${classPerso}`} href={url}>
         {text}
       </Link>
     );
   }
 
   return (
-    <button type='submit' className={styles.secBtn} {...rest}>
+    <button
+      {...rest}
+      type='submit'
+      className={`${styles.secBtn} ${classPerso}`}
+    >
       {text}
     </button>
   );
