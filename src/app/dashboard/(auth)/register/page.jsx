@@ -25,10 +25,10 @@ const Register = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ registerData }),
+        body: JSON.stringify({ ...registerData }),
       });
 
-      res.Status === 201 &&
+      res.status === 201 &&
         router.push('/dashboard/login?success=Account has been created');
     } catch (err) {
       setErr(true);
