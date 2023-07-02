@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 
 async function getData() {
+  console.log(process.env.APP_URL);
   const res = await fetch(`${process.env.APP_URL}/api/posts`, {
     cache: 'no-store',
   });
@@ -21,7 +22,7 @@ const Blog = async () => {
     <div className=''>
       {data.map((item) => (
         <Link
-          key={item.id}
+          key={item._id}
           href={`/blog/${item._id}`}
           className='flex items-center gap-[50px] mb-[50px]'
         >
