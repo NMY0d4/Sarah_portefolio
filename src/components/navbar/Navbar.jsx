@@ -44,7 +44,7 @@ const Navbar = () => {
       <Link href={'/'} className='font-bold text-xl'>
         Sarah
       </Link>
-      <div className='flex items-center gap-4'>
+      <div className='relative flex items-center gap-4'>
         <DarkModeToggle />
         {links.map((link) => (
           <Link href={link.url} key={link.id}>
