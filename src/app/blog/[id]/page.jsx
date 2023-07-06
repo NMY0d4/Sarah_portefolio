@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import getPostDetails from '../../../../lib/getPostDetails';
+import getPostDetails from '@/lib/getPostDetails';
 
 export async function generateMetapost({ params }) {
   const post = await getPostDetails(params.id);

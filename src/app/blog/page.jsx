@@ -1,11 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import getUserPosts from '../../../lib/getUserPosts';
+import getUserPosts from '@/lib/getUserPosts';
 
 export default async function Blog() {
   const postsData = await getUserPosts();
-  console.log(postsData);
   return (
     <div className=''>
       {postsData.map((item) => (
