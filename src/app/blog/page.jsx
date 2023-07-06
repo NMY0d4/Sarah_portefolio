@@ -3,12 +3,12 @@ import Link from 'next/link';
 import React from 'react';
 import getUserPosts from '../../../lib/getUserPosts';
 
-const Blog = async () => {
-  const data = await getUserPosts();
-  console.log(data);
+export default async function Blog() {
+  const postsData = await getUserPosts();
+  console.log(postsData);
   return (
     <div className=''>
-      {data.map((item) => (
+      {postsData.map((item) => (
         <Link
           key={item._id}
           href={`/blog/${item._id}`}
@@ -30,6 +30,4 @@ const Blog = async () => {
       ))}
     </div>
   );
-};
-
-export default Blog;
+}
