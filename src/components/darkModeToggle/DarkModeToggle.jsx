@@ -1,19 +1,19 @@
 'use client';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
 
 const DarkModeToggle = () => {
   const { toggle, mode } = useContext(ThemeContext);
-  const isChecked = mode === 'dark';
 
   return (
-    <div className='toggleWrapper '>
+    <div className='toggleWrapper'>
       <input
         type='checkbox'
-        checked={isChecked}
+        checked={mode === 'dark' ? true : false}
         onClick={toggle}
         className='dn'
         id='dn'
+        readOnly
       />
       <label htmlFor='dn' className='toggle'>
         <span className='toggle__handler'>
