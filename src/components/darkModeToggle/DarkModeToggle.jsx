@@ -4,9 +4,17 @@ import { ThemeContext } from '../../context/ThemeContext';
 
 const DarkModeToggle = () => {
   const { toggle, mode } = useContext(ThemeContext);
+  const isChecked = mode === 'dark';
+
   return (
     <div className='toggleWrapper '>
-      <input type='checkbox' onClick={toggle} className='dn' id='dn' />
+      <input
+        type='checkbox'
+        checked={isChecked}
+        onClick={toggle}
+        className='dn'
+        id='dn'
+      />
       <label htmlFor='dn' className='toggle'>
         <span className='toggle__handler'>
           <span className='crater crater--1'></span>

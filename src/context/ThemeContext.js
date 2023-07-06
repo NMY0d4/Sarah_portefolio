@@ -5,9 +5,16 @@ import { createContext, useState } from 'react';
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [mode, setMode] = useState('light');
+  const [mode, setMode] = useState(
+    () => localStorage.getItem('mode') || 'light'
+  );
+
   const toggle = () => {
-    setMode((prev) => (prev === 'light' ? 'dark' : 'light'));
+    setMode((prev) => {
+      const newMode = prev === 'light' ? 'dark' : 'light';
+      localStorage.setItem('mode', newMode);
+      return newMode;
+    });
   };
 
   return (

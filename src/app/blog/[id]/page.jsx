@@ -1,21 +1,9 @@
 import Image from 'next/image';
 import React from 'react';
-import { notFound } from 'next/navigation';
-
-async function getData(id) {
-  const res = await fetch(`${process.env.APP_URL}/api/posts/${id}`, {
-    cache: 'no-store',
-  });
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    return notFound();
-  }
-
-  return res.json();
-}
+import getPostDetails from '../../../../lib/getPostDetails';
 
 export async function generateMetadata({ params }) {
-  const post = await getData(params.id);
+  const post = await getPostDetails(params.id);
   return {
     title: post.title,
     description: post.desc,
@@ -23,7 +11,8 @@ export async function generateMetadata({ params }) {
 }
 
 const BlogPost = async ({ params }) => {
-  const data = await getData(params.id);
+  const data = await getPostDetails(params.id);
+
   return (
     <div className=''>
       <div className='flex'>

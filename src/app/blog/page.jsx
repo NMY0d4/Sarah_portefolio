@@ -1,23 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-
-async function getData() {
-  console.log(process.env.APP_URL);
-  const res = await fetch(`${process.env.APP_URL}/api/posts`, {
-    cache: 'no-store',
-  });
-  // const posts = await res.json();
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error('Failed to fetch data');
-  }
-
-  return res.json();
-}
+import getUserPosts from '../../../lib/getUserPosts';
 
 const Blog = async () => {
-  const data = await getData();
+  const data = await getUserPosts();
+  console.log(data);
   return (
     <div className=''>
       {data.map((item) => (
