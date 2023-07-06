@@ -10,7 +10,7 @@ export async function generateMetapost({ params }) {
   };
 }
 
-export default async function BlogPost({ params }) {
+export default async function BlogPostPage({ params }) {
   const post = await getPostDetails(params.id);
 
   return (
