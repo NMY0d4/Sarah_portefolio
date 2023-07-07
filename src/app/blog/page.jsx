@@ -4,10 +4,11 @@ import React from 'react';
 import getUserPosts from '@/lib/getUserPosts';
 
 export default async function BlogPage() {
-  const postsData = await getUserPosts();
+  const postsData = getUserPosts();
+  const posts = await postsData;
   return (
     <div className=''>
-      {postsData.map((item) => (
+      {posts.map((item) => (
         <Link
           key={item._id}
           href={`/blog/${item._id}`}

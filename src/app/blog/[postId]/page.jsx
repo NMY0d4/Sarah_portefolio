@@ -11,7 +11,8 @@ export async function generateMetapost({ params: { postId } }) {
 }
 
 export default async function BlogPostPage({ params: { postId } }) {
-  const post = await getPostDetails(postId);
+  const postData = getPostDetails(postId);
+  const post = await postData;
 
   return (
     <div className=''>
