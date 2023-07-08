@@ -14,6 +14,7 @@ export default async function BlogPostPage({ params: { postId } }) {
   const postData = getPostDetails(postId);
   const post = await postData;
 
+  if (!post) return;
   return (
     <div className=''>
       <div className='flex'>
