@@ -4,7 +4,7 @@ import React from 'react';
 import getUserPosts from '@/lib/getUserPosts';
 
 export default async function BlogPage() {
-  const postsData = getUserPosts();
+  // const postsData = getUserPosts();
   const posts = await postsData;
   if (!posts) return;
   return (

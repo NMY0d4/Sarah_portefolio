@@ -2,16 +2,16 @@ import Image from 'next/image';
 import React from 'react';
 import getPostDetails from '@/lib/getPostDetails';
 
-export async function generateMetapost({ params: { postId } }) {
-  const post = await getPostDetails(postId);
-  return {
-    title: post.title,
-    description: post.desc,
-  };
-}
+// export async function generateMetapost({ params: { postId } }) {
+//   const post = await getPostDetails(postId);
+//   return {
+//     title: post.title,
+//     description: post.desc,
+//   };
+// }
 
 export default async function BlogPostPage({ params: { postId } }) {
-  const postData = getPostDetails(postId);
+  // const postData = getPostDetails(postId);
   const post = await postData;
 
   if (!post) return;
