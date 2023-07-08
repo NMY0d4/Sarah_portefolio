@@ -12,7 +12,7 @@ import getPostDetails from '@/lib/getPostDetails';
 
 export default async function BlogPostPage({ params: { postId } }) {
   // const postData = getPostDetails(postId);
-  const post = await postData;
+  const post = postData && (await postData);
 
   if (!post) return;
   return (
