@@ -1,5 +1,5 @@
 export default async function getPostDetails(id) {
-  const res = await fetch(`${process.env.APP_URL}/api/posts/${id}`, {
+  const res = await fetch(`/api/posts/${id}`, {
     cache: 'no-store',
   });
   if (!res.ok) {

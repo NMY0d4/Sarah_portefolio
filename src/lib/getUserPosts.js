@@ -1,5 +1,5 @@
 export default async function getUserPosts() {
-  const res = await fetch(`${process.env.APP_URL}/api/posts`);
+  const res = await fetch(`/api/posts`);
 
   // const posts = await res.json();
   if (!res.ok) {
