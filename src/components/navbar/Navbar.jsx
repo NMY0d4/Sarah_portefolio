@@ -3,6 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 import DarkModeToggle from '../darkModeToggle/DarkModeToggle';
 import { signOut, useSession } from 'next-auth/react';
+import Hamburger from '../ui/BurgerMenu/Hamburger';
 
 const links = [
   {
@@ -44,8 +45,16 @@ const Navbar = () => {
       <Link href={'/'} className='font-bold text-xl'>
         Sarah
       </Link>
-      <div className='relative flex items-center gap-4'>
+      <div
+        className='flex
+       justify-center items-center md:hidden'
+      >
         <DarkModeToggle />
+        <Hamburger />
+      </div>
+      <div className='relative md:flex md:items-center md:gap-4 hidden'>
+        <DarkModeToggle />
+
         {links.map((link) => (
           <Link href={link.url} key={link.id}>
             {link.title}
