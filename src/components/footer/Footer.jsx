@@ -3,7 +3,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <div className='h-[50px] flex items-center justify-between mt-12'>
+    <div className='h-[50px] flex flex-col sm:flex-row items-center justify-between mt-16 mb-4'>
       <div>&copy;2023 Sarah. Tous droits réservés.</div>
       <div className='flex gap-2 opacity-60'>
         <Image
