@@ -13,8 +13,8 @@ function Contact() {
       <h1 className='font-poppins font-bold text-5xl mb-14 text-center text-secondary'>
         Entrons en contact
       </h1>
-      <div className='flex items-center gap-24'>
-        <div className='relative flex-1 h-[300px]'>
+      <div className='flex flex-col-reverse xl:flex-row justify-center items-center gap-10 xl:gap-24'>
+        <div className='relative xl:flex-1 w-full h-[300px]'>
           <Image
             className='object-contain image-move'
             src='/assets/contact-sarah.png'

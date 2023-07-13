@@ -8,9 +8,11 @@ function Portfolio() {
   const titleStyle = `absolute right-4 bottom-3 text-[35px] text-lightness font-bold`;
   // -------------------
   return (
-    <div className=''>
-      <h2 className='my-5 mx-0 text-4xl'>Choisissez une galerie.</h2>
-      <div className='flex gap-12'>
+    <div className='w-full mx-auto'>
+      <h2 className='my-5 mx-0 text-2xl xl:text-4xl'>
+        Choisissez une galerie.
+      </h2>
+      <div className='flex flex-wrap lg:flex-row justify-center gap-12'>
         <Link
           href='portefolio/illustrations'
           className={itemStyle}

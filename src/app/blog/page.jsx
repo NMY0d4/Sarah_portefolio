@@ -15,7 +15,7 @@ export default async function BlogPage() {
           <Link
             key={item._id}
             href={`/blog/${item._id}`}
-            className='flex items-center gap-[50px] mb-[50px]'
+            className='flex flex-col-reverse lg:flex-row items-center lg:gap-[50px] gap-[20px] xl:mb-[50px] mb-[30px]'
           >
             <Image
               src={item.img}

@@ -43,7 +43,7 @@ h1 {
 }
 
 .big-container {
-  @apply container max-w-[1366px] min-h-screen mx-auto px-[60px] flex flex-col justify-between;
+  @apply container max-w-[1366px] min-h-screen mx-auto px-[30px] lg:px-[60px] flex flex-col justify-between;
 }
 
 .inputStyle {
