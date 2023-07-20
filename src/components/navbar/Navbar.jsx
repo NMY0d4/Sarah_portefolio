@@ -4,6 +4,7 @@ import React from 'react';
 import DarkModeToggle from '../darkModeToggle/DarkModeToggle';
 import { signOut, useSession } from 'next-auth/react';
 import Hamburger from '../ui/BurgerMenu/Hamburger';
+import { slide as Menu } from 'react-burger-menu';
 
 const links = [
   {
@@ -45,6 +46,7 @@ const Navbar = () => {
       <Link href={'/'} className='font-bold text-xl'>
         Sarah
       </Link>
+      {/* Menu burger */}
       <div
         className='flex
        justify-center items-center md:hidden'
@@ -52,6 +54,8 @@ const Navbar = () => {
         <DarkModeToggle />
         <Hamburger />
       </div>
+      {/* End Menu Burger */}
+
       <div className='relative md:flex md:items-center md:gap-4 hidden'>
         <DarkModeToggle />
 
