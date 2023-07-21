@@ -1,9 +1,13 @@
 import styles from './Hamburger.module.css';
 
-function Hamburger() {
+function Hamburger({ isChecked, setIsChecked }) {
   return (
     <label className={`${styles.hamburger}`}>
-      <input type='checkbox' />
+      <input
+        type='checkbox'
+        checked={isChecked}
+        onClick={() => setIsChecked((prev) => !prev)}
+      />
       <svg viewBox='0 0 34 34'>
         <path
           className={`${styles.line} ${styles.lineTopBottom}`}

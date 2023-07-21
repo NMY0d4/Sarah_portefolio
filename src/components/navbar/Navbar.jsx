@@ -1,10 +1,10 @@
 'use client';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import DarkModeToggle from '../darkModeToggle/DarkModeToggle';
 import { signOut, useSession } from 'next-auth/react';
 import Hamburger from '../ui/BurgerMenu/Hamburger';
-import { slide as Menu } from 'react-burger-menu';
+import { motion } from 'framer-motion';
 
 const links = [
   {
@@ -40,25 +40,72 @@ const links = [
 ];
 
 const Navbar = () => {
+  const [isChecked, setIsChecked] = useState(false);
   const session = useSession();
+
+  useEffect(() => {
+    function handleResize() {
+      setIsChecked(window.innerWidth > 768 && false);
+    }
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isChecked) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
+  }, [isChecked]);
+
   return (
     <div className='container h-[100px] flex justify-between items-center'>
       <Link href={'/'} className='font-bold text-xl'>
         Sarah
       </Link>
       {/* Menu burger */}
-      <div
-        className='flex
+      <div className='relative'>
+        <div
+          className='flex
        justify-center items-center md:hidden'
-      >
-        <DarkModeToggle />
-        <Hamburger />
+        >
+          <DarkModeToggle />
+          <Hamburger isChecked={isChecked} setIsChecked={setIsChecked} />
+          {/* {isChecked && (
+            <div className='fixed flex flex-col justify-center items-center gap-4 top-[80px] left-0 h-[90vh] w-[100vw] z-10 bg-orange-700'>
+              {links.map((link) => (
+                <Link className='' href={link.url} key={link.id}>
+                  {link.title}
+                </Link>
+              ))}
+            </div>
+          )} */}
+        </div>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }} // Animation au chargement initial
+          animate={{ opacity: isChecked ? 1 : 0, y: isChecked ? 0 : -20 }} // Animation lorsque le menu est ouvert ou fermé
+          transition={{ duration: 0.3 }} // Durée de l'animation en secondes
+          className={`fixed flex flex-col justify-center items-center gap-4 top-[80px] left-0 h-[90vh] w-[100vw] z-10 bg-secondaryDark`}
+        >
+          {links.map((link) => (
+            <Link
+              className='text-lightness'
+              href={link.url}
+              key={link.id}
+              onClick={() => setIsChecked(false)}
+            >
+              {link.title}
+            </Link>
+          ))}
+        </motion.div>
       </div>
       {/* End Menu Burger */}
 
       <div className='relative md:flex md:items-center md:gap-4 hidden'>
         <DarkModeToggle />
-
         {links.map((link) => (
           <Link href={link.url} key={link.id}>
             {link.title}
