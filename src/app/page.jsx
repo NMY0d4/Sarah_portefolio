@@ -16,7 +16,7 @@ export default function Home() {
         >
           Laissez votre imagination prendre vie
         </h1>
-        <p className='text-sm sm:text-lg font-semibold'>
+        <p className='font-dancing text-sm sm:text-lg'>
           Découvrez l&apos;univers visuel captivant d&apos;une graphiste
           passionnée : plongez dans un monde d&apos;expressions artistiques où
           chaque pixel raconte une histoire.
