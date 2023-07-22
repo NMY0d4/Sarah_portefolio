@@ -85,9 +85,9 @@ const Navbar = () => {
           )} */}
         </div>
         <motion.div
-          initial={{ opacity: 0, y: -20 }} // Animation au chargement initial
-          animate={{ opacity: isChecked ? 1 : 0, y: isChecked ? 0 : -20 }} // Animation lorsque le menu est ouvert ou fermé
-          transition={{ duration: 0.3 }} // Durée de l'animation en secondes
+          initial={{ opacity: 0, x: 40 }} // Animation au chargement initial
+          animate={{ opacity: isChecked ? 1 : 0, x: isChecked ? 0 : 40 }} // Animation lorsque le menu est ouvert ou fermé
+          transition={{ duration: 0.4 }} // Durée de l'animation en secondes
           className={`fixed flex flex-col justify-center items-center gap-4 top-[80px] left-0 h-[90vh] w-[100vw] z-10 bg-secondaryDark`}
         >
           {links.map((link) => (
