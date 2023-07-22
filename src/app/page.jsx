@@ -21,7 +21,7 @@ export default function Home() {
           passionnée : plongez dans un monde d&apos;expressions artistiques où
           chaque pixel raconte une histoire.
         </p>
-        <Button text='Mes projets' url='/' />
+        <Button text='Mes projets' url={'/portefolio'} />
       </div>
       <div className={`${item} mx-auto`}>
         <Image
