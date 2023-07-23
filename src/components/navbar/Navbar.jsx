@@ -1,10 +1,13 @@
 'use client';
 import Link from 'next/link';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import DarkModeToggle from '../darkModeToggle/DarkModeToggle';
 import { signOut, useSession } from 'next-auth/react';
 import Hamburger from '../ui/BurgerMenu/Hamburger';
 import { motion } from 'framer-motion';
+
+import styles from './Navbar.module.css';
+import { useSelectedLayoutSegment } from 'next/navigation';
 
 const links = [
   {
@@ -42,6 +45,7 @@ const links = [
 const Navbar = () => {
   const [isChecked, setIsChecked] = useState(false);
   const session = useSession();
+  const activeSegment = useSelectedLayoutSegment();
 
   useEffect(() => {
     function handleResize() {
@@ -74,15 +78,6 @@ const Navbar = () => {
         >
           <DarkModeToggle />
           <Hamburger isChecked={isChecked} setIsChecked={setIsChecked} />
-          {/* {isChecked && (
-            <div className='fixed flex flex-col justify-center items-center gap-4 top-[80px] left-0 h-[90vh] w-[100vw] z-10 bg-orange-700'>
-              {links.map((link) => (
-                <Link className='' href={link.url} key={link.id}>
-                  {link.title}
-                </Link>
-              ))}
-            </div>
-          )} */}
         </div>
         <motion.div
           initial={{ opacity: 0, x: 40 }} // Animation au chargement initial
@@ -107,7 +102,14 @@ const Navbar = () => {
       <div className='relative md:flex md:items-center md:gap-4 hidden'>
         <DarkModeToggle />
         {links.map((link) => (
-          <Link href={link.url} key={link.id}>
+          <Link
+            href={link.url}
+            className={`${styles.button} ${
+              `/${activeSegment}` === link.url ? 'active' : ''
+            }`}
+            key={link.id}
+          >
+            {console.log(`/${activeSegment}` === link.url)}
             {link.title}
           </Link>
         ))}
