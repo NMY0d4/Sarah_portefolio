@@ -8,7 +8,7 @@
   --primaryLight: #548ca7;
   --secondaryDark: #2f7c91;
   --secondary: #19a7ce;
-  --secondaryLight: #0ccaff;
+  --secondaryLight: rgb(12, 202, 255);
   --tertiary: #dbe8ee;
   --darkness: #171717;
   --lightness: #f6f1f1;
@@ -34,13 +34,13 @@ h1 {
 }
 
 .light {
-  background-color: var(--lightness);
+  background-color: var(--tertiary);
   color: var(--greyDark);
 }
 
 .dark {
   background-color: var(--darkness);
-  color: var(--lightness);
+  color: var(--tertiary);
 }
 
 .big-container {

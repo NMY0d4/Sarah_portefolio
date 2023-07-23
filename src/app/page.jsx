@@ -11,7 +11,7 @@ export default function Home() {
     <div className='flex flex-col-reverse items-start gap-10 xl:gap-20 lg:flex-row lg:items-center'>
       <div className={`${item} w-[90%] mx-auto sm:w-[80%]`}>
         <h1
-          className='font-poppins font-extrabold bg-gradient-to-t from-tertiary to-primaryDark text-transparent bg-clip-text 
+          className='font-poppins font-extrabold bg-gradient-to-t from-secondary to-primaryDark text-transparent bg-clip-text 
         leading-[2.5rem] sm:leading-[3.5rem] xl:leading-[4.2rem]'
         >
           Laissez votre imagination prendre vie

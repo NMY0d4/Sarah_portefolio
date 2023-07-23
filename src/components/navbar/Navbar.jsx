@@ -45,7 +45,7 @@ const links = [
 const Navbar = () => {
   const [isChecked, setIsChecked] = useState(false);
   const session = useSession();
-  const activeSegment = useSelectedLayoutSegment();
+  const activeSegment = useSelectedLayoutSegment() || '';
 
   useEffect(() => {
     function handleResize() {
@@ -105,7 +105,7 @@ const Navbar = () => {
           <Link
             href={link.url}
             className={`${styles.button} ${
-              `/${activeSegment}` === link.url ? 'active' : ''
+              `/${activeSegment}` === link.url ? `${styles.active}` : ''
             }`}
             key={link.id}
           >
