@@ -69,29 +69,31 @@ const Navbar = () => {
   }, [isChecked]);
 
   return (
-    <div className='container h-[100px] flex justify-between items-center'>
+    <div className='h-[100px] flex justify-between items-center'>
       <Link href={'/'} className='relative font-bold text-xl'>
         <Image src={sarahLogo} alt='logo sarah portfolio' width={50} />
       </Link>
       {/* Menu burger */}
-      <div className='relative'>
+      <div className='relative md:hidden'>
         <div
           className='flex
-       justify-center items-center md:hidden'
+       justify-center items-center'
         >
           <DarkModeToggle />
           <Hamburger isChecked={isChecked} setIsChecked={setIsChecked} />
         </div>
         <motion.div
-          initial={{ opacity: 0, x: 40 }} // Animation au chargement initial
-          animate={{ opacity: isChecked ? 1 : 0, x: isChecked ? 0 : 40 }} // Animation lorsque le menu est ouvert ou fermé
+          initial={{ opacity: 0, x: 5000 }} // Animation au chargement initial
+          animate={{ opacity: isChecked ? 1 : 0, x: isChecked ? 0 : 500 }} // Animation lorsque le menu est ouvert ou fermé
           transition={{ duration: 0.4 }} // Durée de l'animation en secondes
           className={`fixed flex flex-col justify-center items-center gap-4 top-[80px] left-0 h-[90vh] w-[100vw] z-10 bg-secondaryDark md:hidden`}
         >
           {links.map((link) => (
             <Link
-              className='text-lightness'
               href={link.url}
+              className={`text-lightness ${styles.button} ${
+                `/${activeSegment}` === link.url ? `${styles.active}` : ''
+              }`}
               key={link.id}
               onClick={() => setIsChecked(false)}
             >
@@ -102,7 +104,7 @@ const Navbar = () => {
       </div>
       {/* End Menu Burger */}
 
-      <div className='relative md:flex md:items-center md:gap-4 hidden'>
+      <div className='md:flex items-center md:gap-2 hidden ml-auto'>
         <DarkModeToggle />
         {links.map((link) => (
           <Link
@@ -112,7 +114,6 @@ const Navbar = () => {
             }`}
             key={link.id}
           >
-            {console.log(`/${activeSegment}` === link.url)}
             {link.title}
           </Link>
         ))}

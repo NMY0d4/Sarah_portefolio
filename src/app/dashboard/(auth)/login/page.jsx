@@ -49,8 +49,8 @@ const Login = () => {
           </form>
           <SecBtn
             type='button'
-            text='Login with Google'
-            classPerso='px-3'
+            text='with Google'
+            classPerso='py-2 px-3'
             onClick={() => signIn('google')}
           />
         </div>

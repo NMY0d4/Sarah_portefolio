@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React from 'react';
 
 export const metadata = {
-  title: 'Sarah 👉Contactez-moi 🤞',
+  title: 'Sarah 👉 Contactez-moi',
   description: 'portefolio graphiste, designer',
 };
 
@@ -31,7 +31,7 @@ function Contact() {
             cols='30'
             rows='10'
           ></textarea>
-          <SecBtn text='Envoyer' />
+          <SecBtn classPerso='z-50' text='Envoyer' />
         </form>
       </div>
     </div>
