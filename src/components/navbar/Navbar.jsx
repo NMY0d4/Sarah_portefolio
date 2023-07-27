@@ -1,5 +1,7 @@
 'use client';
 import Link from 'next/link';
+import sarahLogo from '/public/logo/sa_logo.png';
+
 import React, { useEffect, useState } from 'react';
 import DarkModeToggle from '../darkModeToggle/DarkModeToggle';
 import { signOut, useSession } from 'next-auth/react';
@@ -8,6 +10,7 @@ import { motion } from 'framer-motion';
 
 import styles from './Navbar.module.css';
 import { useSelectedLayoutSegment } from 'next/navigation';
+import Image from 'next/image';
 
 const links = [
   {
@@ -67,8 +70,8 @@ const Navbar = () => {
 
   return (
     <div className='container h-[100px] flex justify-between items-center'>
-      <Link href={'/'} className='font-bold text-xl'>
-        Sarah
+      <Link href={'/'} className='relative font-bold text-xl'>
+        <Image src={sarahLogo} alt='logo sarah portfolio' width={50} />
       </Link>
       {/* Menu burger */}
       <div className='relative'>
