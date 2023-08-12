@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import sarahLogo from '/public/logo/sa_logo.png';
+import sarahLogo from '/public/logo/sa_logo2.png';
 
 import React, { useEffect, useState } from 'react';
 import DarkModeToggle from '../darkModeToggle/DarkModeToggle';
@@ -71,7 +71,7 @@ const Navbar = () => {
   return (
     <div className='h-[100px] flex justify-between items-center'>
       <Link href={'/'} className='relative font-bold text-xl'>
-        <Image src={sarahLogo} alt='logo sarah portfolio' width={50} />
+        <Image src={sarahLogo} alt='logo sarah portfolio' width={70} />
       </Link>
       {/* Menu burger */}
       <div className='relative md:hidden'>
